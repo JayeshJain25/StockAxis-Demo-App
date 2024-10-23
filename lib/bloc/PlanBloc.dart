@@ -24,7 +24,6 @@ class PlanBloc extends Bloc<PlanEvent, PlanState> {
         selectedPlan != "Select a Plan (inclusive of GST)") {
       int selectedAmount = int.parse(selectedPlan.split("-")[1].trim());
 
-      // Subtract the previous selected plan amount for the same package
       if (selectedPlans[pkgName] != null &&
           selectedPlans[pkgName] != "Select a Plan (inclusive of GST)") {
         int prevAmount =
@@ -32,11 +31,9 @@ class PlanBloc extends Bloc<PlanEvent, PlanState> {
         totalAmount -= prevAmount;
       }
 
-      // Add the new amount for the selected plan
       totalAmount += selectedAmount;
       selectedPlans[pkgName] = selectedPlan;
     } else {
-      // Deselect plan: Reset to "Select a Plan" and subtract the previous amount
       if (selectedPlans[pkgName] != null &&
           selectedPlans[pkgName] != "Select a Plan (inclusive of GST)") {
         int prevAmount =
@@ -46,17 +43,15 @@ class PlanBloc extends Bloc<PlanEvent, PlanState> {
       selectedPlans[pkgName] = "Select a Plan (inclusive of GST)";
     }
 
-    // Only count valid selected plans (exclude null and default option)
     int selectedCount = selectedPlans.values
         .where((value) =>
             value != null && value != "Select a Plan (inclusive of GST)")
         .length;
 
-    // Apply discount if 2 or more products are selected
     if (selectedCount >= 2) {
       discountedAmount = (totalAmount * 0.80).round();
     } else {
-      discountedAmount = totalAmount; // No discount
+      discountedAmount = totalAmount;
     }
 
     emit(PlanUpdated(totalAmount, discountedAmount, Map.from(selectedPlans)));

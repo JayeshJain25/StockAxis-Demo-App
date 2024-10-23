@@ -14,7 +14,7 @@ xmlns:tools="http://schemas.android.com/tools">
 
 
     <application
-        android:label="shuftipro_kyc"
+        android:label="stockaxis_demo_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         tools:replace="android:label">

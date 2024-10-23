@@ -24,7 +24,8 @@ class PricingDropdown extends StatelessWidget {
           } else if (state is PricingLoaded) {
             return DropdownButtonFormField<String>(
               value: BlocProvider.of<PlanBloc>(context).state is PlanUpdated
-                  ? (BlocProvider.of<PlanBloc>(context).state as PlanUpdated).selectedPlans[pkgName]
+                  ? (BlocProvider.of<PlanBloc>(context).state as PlanUpdated)
+                      .selectedPlans[pkgName]
                   : null,
               hint: Text(
                 'Select a Plan (inclusive of GST)',

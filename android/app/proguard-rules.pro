@@ -1,0 +1,1 @@
+-keep class com.sp.shuftipro_sdk.models**{*;}

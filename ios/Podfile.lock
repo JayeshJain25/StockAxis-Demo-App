@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - ShuftiPro-Onsite (1.2.7)
+  - shuftipro_onsite_sdk (1.0.2):
+    - Flutter
+    - ShuftiPro-Onsite (~> 1.2.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - shuftipro_onsite_sdk (from `.symlinks/plugins/shuftipro_onsite_sdk/ios`)
+
+SPEC REPOS:
+  trunk:
+    - ShuftiPro-Onsite
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  shuftipro_onsite_sdk:
+    :path: ".symlinks/plugins/shuftipro_onsite_sdk/ios"
+
+SPEC CHECKSUMS:
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  ShuftiPro-Onsite: 18b4d0114b84d2d1d1d24a6db38c9ddc474f7988
+  shuftipro_onsite_sdk: 1e6ca562c98e8dfb7b8e56940d4d00cb5416d7af
+
+PODFILE CHECKSUM: 1959d098c91d8a792531a723c4a9d7e9f6a01e38
+
+COCOAPODS: 1.15.2
